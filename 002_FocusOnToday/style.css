@@ -1,0 +1,211 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: antiquewhite;
+    font-family: "Roboto", sans-serif;
+}
+
+.app{
+    width: 100%;
+    padding: 20px;
+    /* text-align: center; */
+}
+
+.app .title h1{
+    font-size: 64px;
+    color: green;
+    text-align: center;
+    margin-top: 0;
+}
+
+.app .title h1 span{
+    color: brown;
+}
+
+.app .task-container {
+    background-color: aliceblue;
+    max-width: 660px;
+    margin-inline: auto;
+    border-radius: 15px;
+    padding: 25px 40px;
+    margin-top: 20px;
+}
+
+.app .task-container .sub-title{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.app .task-container .sub-title h2{
+    font-size: 48px;
+    margin-block: 0;
+}
+
+.app .task-container .progress-label{
+    font-size: 24px;
+    color: grey;
+}
+
+.app .task-container .progress-bar-outer{
+    height: 30px;
+    background-color: rgb(163, 163, 163);
+    border-radius: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.app .task-container .progress-bar-inner{
+    height: 100%;
+    background-color: green;
+    border-radius: 30px;
+    width: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: width 0.8s ease;
+}
+
+.app .task-container .progress-bar-inner span{
+    color: aliceblue;
+    font-size: 12px;
+    margin-inline: 20px;
+    min-width: max-content;
+}
+
+.app .task-container .progress-bar-outer .error-label{
+    color: red;
+    margin-block: 25px;
+    position: absolute;
+    top: 15px;
+    display: none;
+}
+
+.app .task-container .progress-bar-outer .show-error{
+    display: block;
+}
+
+.app .task-container .main-goal-container{
+    width: 100%;
+    margin-top: 70px;
+}
+
+.app .task-container .main-goal-container .goal-container{
+    width: 100%;
+    margin-block: 20px;
+    display: flex;
+    align-items: center;
+    /* gap: 15px; */
+    background-color: white;
+    border-radius: 10px;
+    padding-inline: 20px;
+    border: 0.5px solid rgb(174, 173, 173);
+
+}
+
+.app .task-container .main-goal-container .goal-container .custom-checkbox{
+    height: 25px;
+    width: 25px;
+    /* min-width: 25px; */
+    border: 1px solid rgb(174, 173, 173);
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app .task-container .main-goal-container .goal-container .custom-checkbox .check-icon{
+    display: none;
+}
+
+.app .task-container .main-goal-container .goal-container input{
+    height: 50px;
+    outline: none;
+    border: none;
+    padding: 40px 20px;
+    font-size: 24px;
+    /* font-weight: 100; */
+    color: rgb(72, 71, 71);
+    width: 100%;
+}
+
+.app .task-container .qoute{
+    font-size: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.app .task-container .author{
+    font-size: 12px;
+    color: grey;
+    text-align: center;
+}
+
+.app .task-container .main-goal-container .completed .custom-checkbox{
+    background-color: green;
+    border-color: green;
+}
+
+.app .task-container .main-goal-container .completed .custom-checkbox .check-icon{
+    display: block;
+}
+
+.app .task-container .main-goal-container .completed input{
+    color: green;
+    text-decoration: line-through;
+}
+
+@media (max-width: 550px) {
+
+    .app .title h1{
+        font-size: 36px;
+        margin-block: 0;
+    }
+    
+    .app .task-container {
+        border-radius: 10px;
+        padding: 24px 32px;
+    }
+
+    .app .task-container .sub-title h2{
+        margin-block: 0;
+        font-size: 32px;
+    }
+
+    .app .task-container .progress-label{
+        font-size: 16px;
+    }
+
+    .app .task-container .main-goal-container{
+        margin-top: 50px;
+    }
+
+    .app .task-container .main-goal-container .goal-container{
+        margin-block: 12px;
+        padding-inline: 15px;
+    }
+    
+    .app .task-container .main-goal-container .goal-container .custom-checkbox{
+        height: 18px;
+        width: 18px;
+    }
+    
+    .app .task-container .main-goal-container .goal-container input{
+        height: 35px;
+        padding: 25px 15px;
+        font-size: 16px;
+    }
+    
+    .app .task-container .qoute{
+        font-size: 16px;
+        margin-top: 30px;
+    }
+    
+}
+
