@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+:root{
+    --body-color: #fef9e7;
+    --bg-color: white
+}
+
+body{
+    background-color: var(--body-color);
+}
+
+/* Heading */
+main > h1 span{
+    color: darkred;
+}
+
+/* Result Container */
+main .container{
+    background-color: var(--bg-color);
+    width: 500px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+main .container .input-container{
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+main .container .input-container input{
+    background-color: white;
+    border: none;
+    height: 100px;
+    font-size: 32px;
+    color: black;
+    text-align: end;
+}
+
+/* Button Container */
+main .container .button-container{
+    padding-top: 20px;
+}
+
+main .container .button-container .btn-row .buttons{
+    padding: 30px 0px;   
+    /* margin: 10px; */
+    border: none;
+    background-color: inherit;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+main .container .button-container .btn-row .buttons:hover{
+    background-color: rgba(85, 85, 85, 0.251);
+}
+
+@media (max-width: 480px) {
+    main .container{
+        width: 100%;
+    }
+
+    main .container .button-container .btn-row .buttons{
+        padding: 20px 0px;   
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utils.css" />
+  </head>
+  <body>
+    <main class="flex-col-center wid-100">
+      <h1><i class="fa-solid fa-calculator"></i> <span>Calculator</span></h1>
+
+      <!-- Calculator Container -->
+      <div class="container">
+        <div class="input-container wid-100">
+          <input id="result" class="wid-100" type="text" id="display" disabled/>
+        </div>
+
+        <div class="button-container wid-100">
+            <div class="btn-row wid-100 flex-row-center">
+                <button class="buttons wid-100 orangered" value="AC">AC</button>
+                <button class="buttons wid-100 orangered" value="back">Back</button>
+                <button class="buttons wid-100 orangered" value="%">%</button>
+                <button class="buttons wid-100 orangered" value="/">÷</button>
+            </div>
+            <div class="btn-row wid-100 flex-row-center">
+                <button class="buttons wid-100" value="7">7</button>
+                <button class="buttons wid-100" value="8">8</button>
+                <button class="buttons wid-100" value="9">9</button>
+                <button class="buttons wid-100 orangered" value="*">×</button>
+            </div>
+            <div class="btn-row wid-100 flex-row-center">
+                <button class="buttons wid-100" value="4">4</button>
+                <button class="buttons wid-100" value="5">5</button>
+                <button class="buttons wid-100" value="6">6</button>
+                <button class="buttons wid-100 orangered" value="-">-</button>
+            </div>
+            <div class="btn-row wid-100 flex-row-center">
+                <button class="buttons wid-100" value="1">1</button>
+                <button class="buttons wid-100" value="2">2</button>
+                <button class="buttons wid-100" value="3">3</button>
+                <button class="buttons wid-100 orangered" value="+">+</button>
+            </div>
+            <div class="btn-row wid-100 flex-row-center">
+                <button class="buttons wid-100 orangered" value=""><i class="fa-brands fa-squarespace"></i></button>
+                <button class="buttons wid-100" value="0">0</button>
+                <button class="buttons wid-100 orangered" value=".">.</button>
+                <button class="buttons wid-100 orangered" value="=">=</button>
+            </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

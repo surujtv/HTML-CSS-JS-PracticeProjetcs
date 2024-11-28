@@ -1,0 +1,20 @@
+.wid-100{
+    width: 100%;
+}
+
+.flex-col-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orangered{
+    color: orangered;
+}
