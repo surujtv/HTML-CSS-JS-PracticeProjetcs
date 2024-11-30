@@ -1,6 +1,8 @@
 const buttons = document.querySelectorAll(".buttons");
 const resultInput = document.getElementById("result");
 let resultString = "";
+let M_plus = localStorage.getItem("M_plus") || [];
+let M_minus = localStorage.getItem("M_minus") || [];
 
 buttons.forEach((btn) => {
   btn.addEventListener("click", ({ target }) => {
@@ -30,7 +32,9 @@ buttons.forEach((btn) => {
         break;
 
       case "back":
-        resultString = resultString.slice(0, -1);
+        if(resultString.length > 0){
+          resultString = resultString.slice(0, -1);
+        }
         break;
 
       case ".":
@@ -39,10 +43,46 @@ buttons.forEach((btn) => {
         }
         break;
 
+      case "M+":
+        if (resultString) {
+          M_plus.push(resultString);
+          resultString = "";
+          localStorage.setItem("M_plus", M_plus);
+        }
+        break;
+
+      case "M-":
+        if (resultString) {
+          M_minus.push(resultString);
+          resultString = "";
+          localStorage.setItem("M_minus", M_minus);
+        }
+        break;
+
+      case "MRC":
+        let mrc = 0;
+        if(M_plus.length > 0){
+          for (const element of M_plus) {
+            mrc += element
+          }
+        }
+        if(M_minus.length > 0){
+          for (const element of M_minus) {
+            mrc -= element
+          }
+        }
+  
+        resultString = mrc
+        M_plus = []
+        M_minus = []
+        localStorage.setItem("M_plus", M_plus);
+        localStorage.setItem("M_minus", M_minus);
+        break;
+
       default:
         resultString += value;
     }
 
-    resultInput.value = resultString || "0";
+    resultInput.value = resultString;
   });
 });
