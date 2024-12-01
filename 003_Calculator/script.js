@@ -11,7 +11,12 @@ buttons.forEach((btn) => {
     switch (value) {
       case "=":
         try {
-          resultString = eval(resultString) || ""; // Prevents undefined
+          if(!resultString.startsWith("0")){
+            resultString = eval(resultString) || "";
+          }else{
+            resultString = resultString.substring(1)
+            resultString = eval(resultString) || "";
+          }
         } catch {
           resultString = "Error";
         }
