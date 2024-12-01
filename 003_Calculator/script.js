@@ -10,12 +10,22 @@ buttons.forEach((btn) => {
 
     switch (value) {
       case "=":
+        resultString = resultString.toString()
         try {
-          if(!resultString.startsWith("0")){
-            resultString = eval(resultString) || "";
-          }else{
-            resultString = resultString.substring(1)
-            resultString = eval(resultString) || "";
+          // console.log(typeof(resultString))
+          if (!resultString.startsWith("0")) {
+            if(typeof(resultString) == "string"){
+              resultString = eval(resultString) || ""
+            } else{
+              resultString = resultString
+            }
+          } else {
+            if (typeof(resultString) == "string") {
+              resultString = resultString.substring(1);
+              resultString = eval(resultString) || "";
+            } else{
+              resultString = resultString
+            }
           }
         } catch {
           resultString = "Error";
@@ -37,7 +47,7 @@ buttons.forEach((btn) => {
         break;
 
       case "back":
-        if(resultString.length > 0){
+        if (resultString.length > 0) {
           resultString = resultString.slice(0, -1);
         }
         break;
@@ -66,20 +76,20 @@ buttons.forEach((btn) => {
 
       case "MRC":
         let mrc = 0;
-        if(M_plus.length > 0){
+        if (M_plus.length > 0) {
           for (const element of M_plus) {
-            mrc += element
+            mrc += element;
           }
         }
-        if(M_minus.length > 0){
+        if (M_minus.length > 0) {
           for (const element of M_minus) {
-            mrc -= element
+            mrc -= element;
           }
         }
-  
-        resultString = mrc
-        M_plus = []
-        M_minus = []
+
+        resultString = mrc;
+        M_plus = [];
+        M_minus = [];
         localStorage.setItem("M_plus", M_plus);
         localStorage.setItem("M_minus", M_minus);
         break;
