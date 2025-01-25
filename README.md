@@ -11,3 +11,7 @@
 - Simple Calculator
 - HTML, CSS (flexbox) and JS (DOM properties and Event listeners)
 - eval function
+  
+# Project: 4
+- Faulty Calculator (Simple problem statement)
+- JavaScript (Functions, Conditional statement)
