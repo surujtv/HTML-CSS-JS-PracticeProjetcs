@@ -4,10 +4,9 @@ let resultString = "";
 let M_plus = localStorage.getItem("M_plus") || [];
 let M_minus = localStorage.getItem("M_minus") || [];
 
-buttons.forEach((btn) => {
-  btn.addEventListener("click", ({ target }) => {
-    const value = target.value;
-
+const calcLogic = (target) => {
+  const value = target;
+  console.log(value)
     switch (value) {
       case "=":
         resultString = resultString.toString()
@@ -31,11 +30,11 @@ buttons.forEach((btn) => {
           resultString = "Error";
         }
         break;
-
+  
       case "AC":
         resultString = "";
         break;
-
+  
       case "%":
         if (resultString) {
           try {
@@ -45,19 +44,19 @@ buttons.forEach((btn) => {
           }
         }
         break;
-
+  
       case "back":
         if (resultString.length > 0) {
           resultString = resultString.slice(0, -1);
         }
         break;
-
+  
       case ".":
         if (!resultString.endsWith(".")) {
           resultString += ".";
         }
         break;
-
+  
       case "M+":
         if (resultString) {
           M_plus.push(resultString);
@@ -65,7 +64,7 @@ buttons.forEach((btn) => {
           localStorage.setItem("M_plus", M_plus);
         }
         break;
-
+  
       case "M-":
         if (resultString) {
           M_minus.push(resultString);
@@ -73,7 +72,7 @@ buttons.forEach((btn) => {
           localStorage.setItem("M_minus", M_minus);
         }
         break;
-
+  
       case "MRC":
         let mrc = 0;
         if (M_plus.length > 0) {
@@ -86,18 +85,27 @@ buttons.forEach((btn) => {
             mrc -= element;
           }
         }
-
+  
         resultString = mrc;
         M_plus = [];
         M_minus = [];
         localStorage.setItem("M_plus", M_plus);
         localStorage.setItem("M_minus", M_minus);
         break;
-
+  
       default:
         resultString += value;
     }
-
+  
     resultInput.value = resultString;
+}
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    calcLogic(e.target.value)
   });
-});
+})
+
+document.addEventListener("keypress", function (event) {
+  calcLogic(event.key)
+})
