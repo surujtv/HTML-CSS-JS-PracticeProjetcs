@@ -14,7 +14,7 @@ Create a faulty calculator that gives the wrong answer for the following operati
 
 function calculator(a, b, operation) {
     // 10% chance of faulty operation
-    if (Math.random() < 0.1) {
+    if (Math.random() > 0.1) {
         // Perform faulty operation
         switch (operation) {
             case '+':
